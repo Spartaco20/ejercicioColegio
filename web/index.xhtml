@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Colegio</title>
+        
+        <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    </h:head>
+    <h:body>
+        
+        <div class="container">
+        <!-- Page Content goes here -->
+            <div class="row">
+                <div class="col s12">
+                    <h:form>
+                        <div class="col s6">
+                            <label for=""><h2>Colegio Pequeños Gigantes</h2></label>
+                            <label for=""><h4>Calculo del monto a pagar por matricula escolar</h4></label>
+                        
+                            <h:inputText id="vr_1" maxlength="25" value="#{calcularMatricula.mc.numHijos}" style="padding-top: 70px;" class="validate"/>
+                            <label for="vr_1">Ingrese el número de hijos a matricular</label>
+                        
+                            <h:inputText id="vr_2" maxlength="8" value="#{calcularMatricula.mc.mensualidad}" style="padding-top: 50px;" class="validate"/>
+                            <label for="vr_2">Ingrese valor de la mensualidad</label>
+                        
+                            <div style="padding-top: 40px;" class="row">
+                                <h:commandButton style="font-size: 15px; margin: 15px;" action="#{calcularMatricula.calMatricula()}" value="Calcular Total a Pagar" class="waves-effect teal lighten-3 btn-large"></h:commandButton>
+                            </div>
+                        </div>
+                        <div class="col s6" style="margin-top: 284px;">
+                            <h:inputText id="vr_3" maxlength="8" value="#{calcularMatricula.mc.matricula}" style="padding-top: 50px;" class="validate"/>
+                            <label for="vr_3">Ingrese valor de la matrícula</label>
+                        
+                            <h:inputText id="vr_4" maxlength="8" value="#{calcularMatricula.mc.asoPadres}" style="padding-top: 50px;" class="validate"/>
+                            <label for="vr_4">Ingrese valor a pagar sociedad de padres</label>
+                        
+                            <label for="" style="padding-top: 25px;"><h4>Valor Total a Pagar</h4></label>
+                            <h6>#{calcularMatricula.mc.descuento}</h6>
+                            <h:inputText id="vr_5" value="#{calcularMatricula.mc.valorTotal}" style="padding-top: 10px;" class="validate"/>
+                        
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        
+    </h:body>
+</html>
+
